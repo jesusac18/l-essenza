@@ -1,0 +1,165 @@
+.nav-link:hover {
+  color: #fffbe9 !important;
+  font-weight: 700;
+}
+
+.nav-link.active {
+  font-size: 20px;
+  color: #fffbe9 !important;
+  font-weight: 700;
+}
+
+a {
+  font-size: 20px;
+  color: #fffbe9;
+}
+
+.navbar {
+  background-color: #B81426;
+  color: #fffbe9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-header-links {
+  display: flex;
+  gap: 50px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.navbar-nav {
+  display: none;
+}
+
+.main-page-title-small {
+  font-size: 30px;
+  display: none;
+  margin: 0;
+}
+
+.main-page-title {
+  font-size: 30px;
+  margin: 0;
+  color: #fffbe9;
+  font-weight: 700;
+}
+
+.nav-link img {
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 991px) {
+  .username-desktop-only {
+    display: none !important;
+  }
+
+  .main-page-title-small {
+      margin: 0;
+      color: #fffbe9;
+      font-weight: 700;
+  }
+
+  .navbar-toggler-icon {
+      filter: brightness(0) invert(1);
+  }
+
+  .navbar-header {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: auto;
+  }
+
+  .navbar-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+  }
+
+  .navbar-toggler {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      padding: 20px;
+  }
+
+  .login-link {
+      padding: 20px;
+  }
+
+  .navbar-toggler:focus {
+      outline: none;
+      box-shadow: none;
+  }
+
+  .main-page-title-small {
+      display: block;
+  }
+
+  .main-page-title {
+      display: none;
+  }
+
+  .span-login {
+      display: none;
+  }
+
+  .card-link {
+      display: none;
+  }
+
+  .table-link {
+      display: none;
+  }
+
+  .order-link {
+      display: none;
+  }
+}
+
+footer {
+  background-color: #B81426;
+}
+
+a {
+  color: #fffbe9 !important;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #fffbe9 !important;
+  font-weight: 700;
+}
+
+img {
+  filter: brightness(0) invert(1);
+}
+
+.footer-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fffbe9 ;
+  margin-bottom: 20px;
+  text-align: left;
+  width: 50%;
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+      flex-direction: column;
+      gap: 30px;
+  }
+}

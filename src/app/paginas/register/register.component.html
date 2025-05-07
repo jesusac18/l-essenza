@@ -1,0 +1,81 @@
+<mat-horizontal-stepper [linear]="true">
+  <mat-step [stepControl]="step1">
+    <form [formGroup]="step1">
+      <ng-template matStepLabel>Información Básica</ng-template>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="name" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Correo Electrónico</mat-label>
+        <input matInput type="email" formControlName="email" required />
+      </mat-form-field>
+
+      <div>
+        <button mat-raised-button color="primary" matStepperNext [disabled]="step1.invalid">
+          Siguiente
+        </button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="step2">
+    <form [formGroup]="step2">
+      <ng-template matStepLabel>Seguridad</ng-template>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" formControlName="password" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Confirmar Contraseña</mat-label>
+        <input matInput type="password" formControlName="confirmPassword" required />
+      </mat-form-field>
+
+      <div *ngIf="step2.hasError('passwordMismatch')" class="error">
+        Las contraseñas no coinciden.
+      </div>
+
+      <div>
+        <button mat-button matStepperPrevious>Volver</button>
+        <button mat-raised-button color="primary" matStepperNext [disabled]="step2.invalid">
+          Siguiente
+        </button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="step3">
+    <form [formGroup]="step3" (ngSubmit)="onSubmit()">
+      <ng-template matStepLabel>Detalles</ng-template>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Teléfono</mat-label>
+        <input matInput formControlName="telefono" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Dirección</mat-label>
+        <input matInput formControlName="direccion" />
+      </mat-form-field>
+
+      <mat-checkbox formControlName="recibirNovedades">
+        Recibir novedades
+      </mat-checkbox>
+
+      <mat-checkbox formControlName="recibirFacturasPorEmail">
+        Recibir facturas por email
+      </mat-checkbox>
+
+      <div>
+        <button mat-button matStepperPrevious>Volver</button>
+        <button mat-raised-button color="accent" type="submit" [disabled]="step3.invalid">
+          Registrar
+        </button>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>

@@ -1,0 +1,53 @@
+.account-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px;
+}
+
+.sidenav-container {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+}
+
+.sidenav {
+  width: 250px;
+  background-color: #f4f4f4;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 16px;
+  background-color: #fff;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+mat-error {
+  color: #f44336;
+}
+
+mat-nav-list {
+  padding: 0;
+}
+
+mat-nav-list a {
+  cursor: pointer;
+  padding: 16px;
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
+mat-nav-list a:hover {
+  background-color: #d3d3d3;
+}

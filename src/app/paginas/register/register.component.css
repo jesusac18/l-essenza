@@ -1,0 +1,84 @@
+/* Contenedor del stepper */
+mat-horizontal-stepper {
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  /* Paso individual */
+  mat-step {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Formulario en cada paso */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  /* Estilo de los botones */
+  button {
+    margin-top: 20px;
+  }
+  
+  mat-raised-button {
+    width: 100%;
+    padding: 12px 0;
+  }
+  
+  mat-button {
+    margin-right: 10px;
+  }
+  
+  /* Diseño de los mensajes de error */
+  .error {
+    color: #f44336;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  
+  mat-checkbox {
+    margin-top: 16px;
+    display: block;
+  }
+  
+  /* Alineación de los pasos */
+  mat-step-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  mat-step-header .mat-step-icon {
+    font-size: 20px;
+    color: #5c6bc0;
+  }
+  
+  mat-step-header .mat-step-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #424242;
+  }
+  
+  mat-step-header .mat-step-optional {
+    font-size: 14px;
+    color: #757575;
+  }
+  
+  /* Color y apariencia cuando se pasa al siguiente paso */
+  mat-step-header.mat-step-active .mat-step-icon {
+    background-color: #5c6bc0;
+    color: white;
+  }
+  
+  mat-step-header.mat-step-completed .mat-step-icon {
+    background-color: #388e3c;
+    color: white;
+  }
+  
+  /* Estilo para el último paso */
+  mat-step:last-child {
+    margin-bottom: 40px;
+  }
+  
