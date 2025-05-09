@@ -17,4 +17,30 @@
     margin-top: 10px;
     display: block;
   }
+  .auth-button-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 1rem; 
+    margin-top: 1.5rem;
+  }
+  .auth-button-group button {
+    width: 100%;
+  }
+  .submit {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .submit button{
+    width: 100%;
+  }
+  h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+  }
   

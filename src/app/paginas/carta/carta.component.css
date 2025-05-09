@@ -1,0 +1,289 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fdfdfd;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fdfdfd;
+}
+
+.title {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  padding: 0 16px 2rem;
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  padding: 1rem;
+}
+
+.card img {
+  margin: 20px;
+  border-radius: 10px;
+}
+
+mat-card-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+mat-card-content p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0.5rem 0;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+mat-card-actions button {
+  width: 100%;
+}
+
+mat-raised-button {
+  background-color: #B81426;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 8px 16px;
+  box-shadow: none;
+  transition: background-color 0.3s ease;
+}
+
+mat-raised-button:hover {
+  background-color: #9E1120;
+}
+
+.order-section,
+.company-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.order-img,
+.restaurant-img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-info h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.contact-item mat-icon {
+  color: #007bff;
+}
+
+.contact-item a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  margin-top: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.categoria-card {
+  height: 200px;
+  position: relative;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.categoria-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+}
+
+.categoria-overlay h5 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+h2.text-center {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.platos-carousel {
+  max-width: 100%;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.platos-carousel ::ng-deep .mat-tab-group {
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.platos-carousel ::ng-deep .mat-tab-labels {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.platos-carousel ::ng-deep .mat-tab-label {
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.platos-carousel ::ng-deep .mat-tab-label.mat-tab-label-active {
+  color: #B81426;
+  border-bottom: 3px solid #B81426;
+  background-color: #ffffff;
+}
+
+.plato-card {
+  max-width: 100%;
+  margin-top: 1rem;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: none;
+  background-color: #fff;
+}
+
+.plato-card img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.plato-card mat-card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.plato-card mat-card-content p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0.5rem 0;
+}
+
+.plato-card mat-card-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .category-grid {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .order-section,
+  .company-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-info {
+    align-items: center;
+  }
+
+  .restaurant-img {
+    max-width: 100%;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .contact-item {
+    font-size: 0.9rem;
+  }
+}

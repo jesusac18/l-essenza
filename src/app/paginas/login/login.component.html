@@ -1,6 +1,5 @@
+<h2>Iniciar Sesión</h2>
 <div class="login-container mat-elevation-z4">
-  <h2>Iniciar Sesión</h2>
-
   <form (ngSubmit)="loginWithEmail()" #loginForm="ngForm">
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>Correo electrónico</mat-label>
@@ -12,10 +11,15 @@
       <input matInput type="password" [(ngModel)]="password" name="password" required />
     </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit">Iniciar sesión</button>
+    <div class="submit">
+      <button mat-raised-button color="primary" type="submit">Iniciar sesión</button>
+    </div>
   </form>
 
-  <button mat-raised-button color="accent" (click)="loginWithGoogle()" style="margin-top: 10px;">
-    Iniciar sesión con Google
-  </button>
+  <div class="auth-button-group">
+    <button mat-raised-button color="accent" (click)="loginWithGoogle()">
+      Iniciar sesión con Google
+    </button>
+    <p>No tienes una cuenta? <a routerLink="/register">Registrate</a></p>
+  </div>  
 </div>

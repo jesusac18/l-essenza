@@ -81,4 +81,19 @@ mat-horizontal-stepper {
   mat-step:last-child {
     margin-bottom: 40px;
   }
+  .auth-button-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 1rem; 
+    margin-top: 1.5rem;
+  }
+  h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+  }
   

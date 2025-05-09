@@ -5,13 +5,13 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand main-page-title-small" routerLink="/home">L'Essenza</a>
+        <a class="navbar-brand main-page-title-small" routerLink="/inicio">L'Essenza</a>
         <div class="navbar-header">
-          <a class="navbar-brand main-page-title" routerLink="/home">L'Essenza</a>
+          <a class="navbar-brand main-page-title" routerLink="/inicio">L'Essenza</a>
           <div class="navbar-header-links">
-            <a class="nav-link table-link" routerLink="/table" routerLinkActive="active"><span class="span-table">Reserva Mesa</span><img src="iconos/head/mesa.png" alt="icono mesa" width="30" height="30"></a>
-            <a class="nav-link order-link" routerLink="/order" routerLinkActive="active"><span class="span-order">Pedir Ahora</span><img src="iconos/head/pedir.png" alt="icono pedido" width="30" height="30"></a>
-            <a class="nav-link card-link" routerLink="/card" routerLinkActive="active"><span class="span-card">Nuestra Carta</span><img src="iconos/head/plato.png" alt="icono carta" width="30" height="30"></a>
+            <a class="nav-link table-link" routerLink="/reserva" routerLinkActive="active"><span class="span-table">Reserva Mesa</span><img src="iconos/head/mesa.png" alt="icono mesa" width="30" height="30"></a>
+            <a class="nav-link order-link" routerLink="/pedir" routerLinkActive="active"><span class="span-order">Pedir Ahora</span><img src="iconos/head/pedir.png" alt="icono pedido" width="30" height="30"></a>
+            <a class="nav-link card-link" routerLink="/carta" routerLinkActive="active"><span class="span-card">Nuestra Carta</span><img src="iconos/head/plato.png" alt="icono carta" width="30" height="30"></a>
             <a *ngIf="!isAuthenticated" class="nav-link login-link" routerLink="/login" routerLinkActive="active"><span class="span-login">Inicia Sesión</span><img src="iconos/head/usuario_login.png" alt="icono usuario" width="30" height="30"></a>
             <a *ngIf="isAuthenticated" class="nav-link login-link" routerLink="/account" routerLinkActive="active"><span class="span-login">{{ userName }}</span><img src="iconos/head/usuario_login.png" alt="icono usuario" width="30" height="30"></a>
           </div>
@@ -22,16 +22,16 @@
               <a class="nav-link" routerLink="/inicio" routerLinkActive="active">INICIO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/table" routerLinkActive="active">RESERVAR MESA</a>
+              <a class="nav-link" routerLink="/reserva" routerLinkActive="active">RESERVAR MESA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/order" routerLinkActive="active">PEDIR A DOMICILIO / RECOGER</a>
+              <a class="nav-link" routerLink="/pedir" routerLinkActive="active">PEDIR A DOMICILIO / RECOGER</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/card" routerLinkActive="active">CARTA</a>
+              <a class="nav-link" routerLink="/carta" routerLinkActive="active">CARTA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/about" routerLinkActive="active">¡CONOCENOS!</a>
+              <a class="nav-link" routerLink="/conocenos" routerLinkActive="active">¡CONOCENOS!</a>
             </li>
             <li class="nav-item" *ngIf="isAuthenticated">
               <a class="nav-link" routerLink="/account" routerLinkActive="active">TU CUENTA</a>
@@ -49,7 +49,7 @@
     <div class="container">
       <div class="footer-content d-flex justify-content-around align-items-start">
         <div class="footer-left">
-          <a routerLink="/home"><h1 class="footer-title">L'Essenza</h1></a>
+          <a routerLink="/inicio"><h1 class="footer-title">L'Essenza</h1></a>
           <ul class="footer-links list-unstyled">
             <li><a href="#">Política de Privacidad</a></li>
             <li><a href="#">Términos y Condiciones</a></li>
