@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionData, doc, getDocs, query, where } from '@angular/fire/firestore';
+import { Firestore, collection, collectionData, doc, docData, getDocs, query, where } from '@angular/fire/firestore';
+import { getDoc } from 'firebase/firestore';
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,27 @@ export class FirestoreService {
         const platosArrays = await Promise.all(allPlatoObservables);
         return platosArrays.flat();
       })
+    );
+  }
+
+  getPlatoById(categoriaId: string, platoId: string): Observable<any | null> {
+    const platoRef = doc(this.firestore, `categorias/${categoriaId}/platos/${platoId}`);
+    return docData(platoRef, { idField: 'id' }).pipe(
+      map((data) => (data ? { ...data, categoriaId } : null))
+    );
+  }
+
+  getCategoriaById(categoriaId: string): Observable<any | null> {
+    const categoriaRef = doc(this.firestore, `categorias/${categoriaId}`);
+    return docData(categoriaRef, { idField: 'id' }).pipe(
+      map((data) => (data ? data : null))
+    );
+  }
+
+  getPlatosByCategoriaId(categoriaId: string): Observable<any[]> {
+    const platosRef = collection(this.firestore, `categorias/${categoriaId}/platos`);
+    return collectionData(platosRef, { idField: 'id' }).pipe(
+      map(platos => platos.map(plato => ({ ...plato, categoriaId })))
     );
   }
 }

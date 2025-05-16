@@ -2,28 +2,26 @@
   <h1 class="title mat-title">Nuestros mejores platos</h1>
   
   <div class="main-content">
-    <!-- Nueva Carta -->
     <mat-card class="card mat-elevation-z4">
       <img mat-card-image src="imagenes/card/plato_carta.jpg" alt="Imagen de carta" />
     </mat-card>
   
     <h1 class="title mat-title text-center">CARTA</h1>
 
-    <!-- Platos en pestañas -->
     <div class="platos-carousel">
       <mat-tab-group dynamicHeight>
         <mat-tab *ngFor="let plato of platos">
-          <ng-template mat-tab-label>{{ plato.titulo }}</ng-template>
+          <ng-template mat-tab-label>{{ plato.nombre }}</ng-template>
           <mat-card class="plato-card mat-elevation-z4">
             <img mat-card-image [src]="plato.imagen" alt="Imagen de plato" />
             <mat-card-header>
-              <mat-card-title>{{ plato.titulo }}</mat-card-title>
+              <mat-card-title>{{ plato.nombre }}</mat-card-title>
             </mat-card-header>
             <mat-card-content>
               <p>{{ plato.descripcion }}</p>
             </mat-card-content>
             <mat-card-actions>
-              <button mat-raised-button color="primary">VER PLATO</button>
+              <button mat-raised-button color="primary" routerLink="/{{ plato.categoriaId }}/{{ plato.id }}">VER PLATO</button>
             </mat-card-actions>
           </mat-card>
         </mat-tab>
@@ -33,15 +31,14 @@
     <section>
       <h2 class="text-center mt-5">Categorías</h2>
       <div class="category-grid">
-        <mat-card *ngFor="let categoria of categorias" class="categoria-card" [ngStyle]="{ 'background-image': 'url(' + categoria.imagen + ')' }">
-          <div class="categoria-overlay">
-            <h5>{{ categoria.nombre }}</h5>
-          </div>
+        <mat-card routerLink="/{{ categoria.id }}" *ngFor="let categoria of categorias" class="categoria-card" [ngStyle]="{ 'background-image': 'url(' + categoria.imagen + ')' }">
+            <div class="categoria-overlay">
+              <h5>{{ categoria.nombre }}</h5>
+            </div>
         </mat-card>
       </div>
     </section>    
 
-    <!-- Ordena Fácil y Rápido -->
     <div class="order-section">
       <mat-card class="card mat-elevation-z4">
         <mat-card-header>
@@ -56,8 +53,7 @@
       </mat-card>
       <img src="imagenes/home/fondo_imagen_pedido.webp" class="order-img" alt="Imagen de pedido">
     </div>
-  
-    <!-- Ven a Disfrutar -->
+
     <div class="company-section">
       <img src="imagenes/home/restaurante.jpg" class="restaurant-img" alt="Imagen de restaurante">
       <mat-card class="card mat-elevation-z4">

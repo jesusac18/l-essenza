@@ -7,6 +7,8 @@ import { InicioComponent } from './paginas/inicio/inicio.component';
 import { ConocenosComponent } from './paginas/conocenos/conocenos.component';
 import { CartaComponent } from './paginas/carta/carta.component';
 import { ReservaComponent } from './paginas/reserva/reserva.component';
+import { PlatoComponent } from './paginas/plato/plato.component';
+import { CategoriaComponent } from './paginas/categoria/categoria.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -16,5 +18,7 @@ export const routes: Routes = [
     { path: 'conocenos', component: ConocenosComponent },
     { path: 'carta', component: CartaComponent },
     { path: 'reserva', component: ReservaComponent },
+    { path: ':idCategoria', component: CategoriaComponent },
+    { path: ':idCategoria/:idPlato', component: PlatoComponent },
     { path: '', redirectTo: '/inicio', pathMatch: 'full' }
   ];  

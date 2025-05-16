@@ -1,0 +1,73 @@
+/* Básicamente el mismo estilo que tu componente carta/plato */
+
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    background-color: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: center;
+  }
+  
+  .plato-card {
+    width: 100%;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    background-color: #fff;
+  }
+  
+  .plato-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .plato-card mat-card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+  }
+  
+  .plato-card mat-card-subtitle {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 0.8rem;
+  }
+  
+  .plato-card mat-card-content p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+  }
+  
+  mat-card-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  
+  mat-card-actions button {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .loading {
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 1.2rem;
+    color: #777;
+  }
+  
