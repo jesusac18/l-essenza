@@ -1,0 +1,65 @@
+<h2>Reserva tu Mesa</h2>
+<form [formGroup]="reservaForm" (ngSubmit)="reservar()" class="reserva-form">
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="nombre" required />
+    <mat-error *ngIf="reservaForm.get('nombre')?.invalid && reservaForm.get('nombre')?.touched">
+      El nombre es obligatorio.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Correo Electrónico</mat-label>
+    <input matInput type="email" formControlName="email" required />
+    <mat-error *ngIf="reservaForm.get('email')?.invalid && reservaForm.get('email')?.touched">
+      <span *ngIf="reservaForm.get('email')?.hasError('required')">El correo es obligatorio.</span>
+      <span *ngIf="reservaForm.get('email')?.hasError('email')">Correo no válido.</span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Teléfono</mat-label>
+    <input matInput formControlName="telefono" required />
+    <mat-error *ngIf="reservaForm.get('telefono')?.invalid && reservaForm.get('telefono')?.touched">
+      El teléfono es obligatorio.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Fecha</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="fecha" required />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="reservaForm.get('fecha')?.invalid && reservaForm.get('fecha')?.touched">
+      La fecha es obligatoria.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Hora</mat-label>
+    <input matInput type="time" formControlName="hora" required />
+    <mat-error *ngIf="reservaForm.get('hora')?.invalid && reservaForm.get('hora')?.touched">
+      La hora es obligatoria.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Número de personas</mat-label>
+    <input matInput type="number" min="1" formControlName="personas" required />
+    <mat-error *ngIf="reservaForm.get('personas')?.invalid && reservaForm.get('personas')?.touched">
+      Debe ser al menos 1 persona.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Mesa</mat-label>
+    <mat-select formControlName="mesa" required>
+      <mat-option *ngFor="let n of mesas" [value]="n">Mesa {{ n }}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="reservaForm.get('mesa')?.invalid && reservaForm.get('mesa')?.touched">
+      Selecciona una mesa.
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="reservaForm.invalid">Reservar</button>
+</form>

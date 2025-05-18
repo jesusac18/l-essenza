@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionData, doc, docData, getDocs, query, where } from '@angular/fire/firestore';
+import { Firestore, collection, collectionData, doc, docData, getDocs, query, where, addDoc } from '@angular/fire/firestore';
 import { getDoc } from 'firebase/firestore';
 import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
@@ -50,5 +50,24 @@ export class FirestoreService {
     return collectionData(platosRef, { idField: 'id' }).pipe(
       map(platos => platos.map(plato => ({ ...plato, categoriaId })))
     );
+  }
+
+  async existeReserva(fecha: string, hora: string): Promise<boolean> {
+    const reservasRef = collection(this.firestore, 'reservas');
+    const q = query(reservasRef, where('fecha', '==', fecha), where('hora', '==', hora));
+    const snapshot = await getDocs(q);
+    return !snapshot.empty;
+  }
+
+  async existeReservaMesa(fecha: string, hora: string, mesa: string): Promise<boolean> {
+    const reservasRef = collection(this.firestore, 'reservas');
+    const q = query(reservasRef, where('fecha', '==', fecha), where('hora', '==', hora), where('mesa', '==', mesa));
+    const snapshot = await getDocs(q);
+    return !snapshot.empty;
+  }
+
+  async guardarReserva(reserva: any): Promise<void> {
+    const reservasRef = collection(this.firestore, 'reservas');
+    await addDoc(reservasRef, reserva);
   }
 }
