@@ -37,7 +37,9 @@
 
   <mat-form-field appearance="fill" class="full-width">
     <mat-label>Hora</mat-label>
-    <input matInput type="time" formControlName="hora" required />
+    <mat-select formControlName="hora" required>
+      <mat-option *ngFor="let h of horariosDisponibles" [value]="h">{{ h }}</mat-option>
+    </mat-select>
     <mat-error *ngIf="reservaForm.get('hora')?.invalid && reservaForm.get('hora')?.touched">
       La hora es obligatoria.
     </mat-error>
@@ -48,16 +50,6 @@
     <input matInput type="number" min="1" formControlName="personas" required />
     <mat-error *ngIf="reservaForm.get('personas')?.invalid && reservaForm.get('personas')?.touched">
       Debe ser al menos 1 persona.
-    </mat-error>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill" class="full-width">
-    <mat-label>Mesa</mat-label>
-    <mat-select formControlName="mesa" required>
-      <mat-option *ngFor="let n of mesas" [value]="n">Mesa {{ n }}</mat-option>
-    </mat-select>
-    <mat-error *ngIf="reservaForm.get('mesa')?.invalid && reservaForm.get('mesa')?.touched">
-      Selecciona una mesa.
     </mat-error>
   </mat-form-field>
 
